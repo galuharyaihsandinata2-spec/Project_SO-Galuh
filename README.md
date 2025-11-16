@@ -214,11 +214,7 @@ sudo adduser admin_hr
 
   Gambar 4 : https://drive.google.com/file/d/1IQlhpD85oK_S9K9lri-tLrWw24mvZiZy/view?usp=sharing
 
-  Berikut penjelasan **syntax dan proses yang terjadi** pada terminal tersebut secara jelas dan terstruktur:
-
----
-
-### 1. **Menampilkan informasi penambahan user**
+# 1. Menampilkan informasi penambahan user
 ```
 Is the information correct? [Y/n] y
 info: Adding new user `admin_hr` to supplemental / extra groups `users` ...
@@ -229,7 +225,7 @@ info: Adding user `admin_hr` to group `users` ...
 
 ---
 
-### 2. **Mengubah kepemilikan direktori `hr`**
+# 2. Mengubah kepemilikan direktori `hr`
 ```bash
 sudo chown -R admin_hr /home/hozz/project_file_manajement_server/hr
 ```
@@ -237,18 +233,14 @@ sudo chown -R admin_hr /home/hozz/project_file_manajement_server/hr
 - `chown -R` : mengubah owner secara rekursif.
 - User `admin_hr` menjadi pemilik direktori `/home/hozz/project_file_manajement_server/hr` beserta isinya.
 
----
-
-### 3. **Mengatur permission folder `hr`**
+# 3. Mengatur permission folder `hr`
 ```bash
 sudo chmod -R 700 /home/hozz/project_file_manajement_server/hr
 ```
 - Memberikan hak akses penuh (read, write, execute) hanya kepada pemilik (`admin_hr`) di direktori `hr`.
 - Melarang akses untuk grup dan user lain.
 
----
-
-### 4. **Percobaan masuk ke direktori `marketing` gagal**
+# 4. Percobaan masuk ke direktori `marketing` gagal
 ```bash
 cd marketing
 bash: cd: marketing: Permission denied
@@ -256,9 +248,7 @@ bash: cd: marketing: Permission denied
 - User saat ini tidak punya izin untuk masuk ke folder `marketing`.
 - Ini karena permission folder marketing membatasi akses, mungkin hanya untuk user `admin_marketing`.
 
----
-
-### 5. **Switch user ke `admin_marketing`**
+# 5. Switch user ke `admin_marketing`
 ```bash
 su admin_marketing
 Password:
@@ -269,9 +259,7 @@ ls
 - User ini berhasil masuk ke direktori `marketing`.
 - Menampilkan isi folder `marketing` berupa direktori `archives` dan `documents`.
 
----
-
-### 6. **Keluar dari sesi `admin_marketing`**
+# 6. Keluar dari sesi `admin_marketing`
 ```bash
 exit
 ```
@@ -279,16 +267,14 @@ exit
 
 ---
 
-### 7. **Percobaan masuk ke direktori `engineering` gagal**
+# 7. Percobaan masuk ke direktori `engineering` gagal`
 ```bash
 cd engineering
 bash: cd: engineering: Permission denied
 ```
 - Sama seperti sebelumnya, akses ditolak karena permission yang membatasi.
 
----
-
-### 8. **Switch user ke `admin_engineering`**
+# 8. Switch user ke `admin_engineering`
 ```bash
 su admin_engineering
 Password:
@@ -297,9 +283,7 @@ ls
 - Beralih ke user `admin_engineering`.
 - User berhasil melihat isi folder `project_file_manajement_server`, yaitu folder engineering, hr, dan marketing sebagai daftar folder di dalamnya.
 
----
-
-### 9. **Keluar dari sesi `admin_engineering`**
+# 9. Keluar dari sesi `admin_engineering`
 ```bash
 exit
 ```
@@ -307,16 +291,14 @@ exit
 
 ---
 
-### 10. **Percobaan masuk direktori `hr` oleh user biasa gagal**
+# 10. Percobaan masuk direktori `hr` oleh user biasa gagal
 ```bash
 cd hr
 bash: cd: hr: Permission denied
 ```
 - User `hozz` tidak punya akses ke folder `hr`.
 
----
-
-### 11. **Switch user ke `admin_hr`**
+# 11. switch user ke `admin_hr`
 ```bash
 su admin_hr
 Password:
@@ -327,7 +309,7 @@ ls
 
 ---
 
-### 12. **Masuk ke direktori `hr` dan melihat isinya**
+# 12. Masuk ke direktori `hr` dan melihat isinya
 ```bash
 cd hr
 ls
@@ -337,15 +319,13 @@ ls
 
 ---
 
-### 13. **Keluar dari sesi `admin_hr`**
+# 13. Keluar dari sesi `admin_hr`
 ```bash
 exit
 ```
 - Kembali ke user awal (`hozz`).
 
----
-
-## **Kesimpulan:**
+# Kesimpulan:
 
 - Direktori `marketing`, `engineering`, dan `hr` diberikan **permission 700**, sehingga hanya user pemilik yang dapat mengaksesnya.
 - User umum (`hozz`) tidak dapat mengakses folder tersebut karena kondisi permission yang ketat.
@@ -353,6 +333,3 @@ exit
 - Perpindahan user dengan `su <username>` digunakan untuk mengakses folder yang memiliki hak akses terbatas.
 - Sistem keamanan direktori sudah diimplementasikan dengan membatasi akses sesuai user yang berhak.
 
----
-
-Jika Anda ingin saya jelaskan lebih detail tentang perintah tertentu atau aspek lain, silakan beri tahu!
