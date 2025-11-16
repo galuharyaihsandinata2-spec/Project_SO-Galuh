@@ -154,7 +154,7 @@ Perintah ini memberikan kontrol penuh (baca, tulis, eksekusi) hanya pada pemilik
 - Direktori `marketing` dan semua isinya sekarang dimiliki oleh user `admin_marketing`.
 - Permission direktori `marketing` dan isinya dibatasi hanya untuk pemilik (`admin_marketing`) saja, dengan hak penuh (700).
 
-Gambar 3 : https://drive.google.com/file/d/1w0qeG70vrKy2h404x65R1Fn94bodnjFe/view?usp=sharing
+Gambar 3 : https://drive.google.com/file/d/1uLWgkcanyQdX0DaaLJE9dmocjPFqQ2Hc/view?usp=sharing
 
 # 1. Perintah mengubah permission direktori marketing
 ```bash
