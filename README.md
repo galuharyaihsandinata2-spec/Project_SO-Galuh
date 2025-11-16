@@ -333,3 +333,55 @@ exit
 - Perpindahan user dengan `su <username>` digunakan untuk mengakses folder yang memiliki hak akses terbatas.
 - Sistem keamanan direktori sudah diimplementasikan dengan membatasi akses sesuai user yang berhak.
 
+Gambar 5 : https://drive.google.com/file/d/1EimOLTRer6WR5h8LQaPI5MA5l6yzhmMP/view?usp=sharing
+
+# 1. Perintah `exit`
+```bash
+exit
+```
+- Perintah untuk keluar dari sesi shell atau user saat ini.
+- Jika sebelumnya menggunakan `su` untuk berpindah user, `exit` mengembalikan ke user sebelumnya.
+- Jika di shell biasa, perintah ini akan menutup terminal atau sesi SSH.
+
+# 2. Perintah `find` dengan redirect output ke file
+```bash
+find /home/hozz/project_file_manajement -type f -name "*.pdf" > daftar_pdf.txt
+```
+- `find` : perintah untuk mencari file atau direktori berdasarkan kriteria tertentu.
+- `/home/hozz/project_file_manajement` : direktori root tempat pencarian dimulai.
+- `-type f` : mencari hanya file biasa (bukan direktori, link, dll).
+- `-name "*.pdf"` : mencari file dengan ekstensi `.pdf` (nama file yang berakhiran `.pdf`).
+- `>` : redirect output perintah ke file.
+- `daftar_pdf.txt` : file tujuan untuk menyimpan daftar hasil pencarian.
+  
+# Fungsi: 
+Mencari semua file `.pdf` di dalam folder `/home/hozz/project_file_manajement` dan menyimpan daftar lengkap path file tersebut ke dalam `daftar_pdf.txt`.
+
+# 3. Perintah `ls`
+```bash
+ls
+```
+- Menampilkan isi direktori kerja saat ini.
+- Dalam output terlihat `daftar_pdf.txt` (file hasil pencarian), dan folder `engineering`, `hr`, `marketing`.
+
+# 4. Perintah `cat` untuk menampilkan isi file
+```bash
+cat daftar_pdf.txt
+```
+- Menampilkan isi file `daftar_pdf.txt` ke terminal.
+- Isi file berupa path lengkap ke file-file `.pdf` yang ditemukan, misalnya:
+  ```
+  /home/hozz/project_file_manajement/archives/file16.pdf
+  /home/hozz/project_file_manajement/archives/file17.pdf
+  /home/hozz/project_file_manajement/archives/file18.pdf
+  ```
+
+# Ringkasan:
+
+- `exit` mengakhiri sesi shell / berpindah user.
+- `find ... -type f -name "*.pdf"` mencari seluruh file PDF.
+- Output hasil `find` disimpan dalam file `daftar_pdf.txt`.
+- `ls` menampilkan file dan folder yang ada saat ini.
+- `cat` digunakan untuk membaca isi file hasil pencarian dan menampilkannya di terminal.
+
+
